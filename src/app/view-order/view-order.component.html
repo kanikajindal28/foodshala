@@ -1,0 +1,57 @@
+
+
+<app-navbar></app-navbar>
+<div class="container bg-light mt-5">
+  <div class="container-fluid pb-5">
+
+
+    <h1 class="font1 text-center pt-5 text-black-50 mt-5">My Orders</h1>
+    <hr class="mb-4">
+
+
+    <div class="container" *ngFor="let order of myOrders;">
+
+
+
+      <div class="row" >
+
+
+        <div class="col-sm-6">
+          <h2 class="font1">{{order[0].customer.name}}</h2>
+          <b>Phone No :- </b><small>{{order[0].customer.mobileNo}}</small><br>
+          <b>Email :- </b><small>{{order[0].customer.email}}</small><br>
+        </div>
+
+        <div class="col-sm-6">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>FoodItem</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let x of order">
+                <td class="pt-3">{{x.item.foodItem}}</td>
+                <td><i class="fa my-3">&#xf156;</i>{{x.item.price}}</td>
+                <td>{{x.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+        <hr>
+
+
+      </div>
+      <hr>
+
+
+
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,27 @@
+.font1 {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil&display=swap');
+
+.font2 {
+  font-family: 'Fira Sans', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+.cart {
+
+  border: 1px solid darkgrey;
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 10px;
+
+}
+
+.place_order {
+  border-left: 1px solid darkgrey;
+}
+
+
+#grad {
+  background-image: linear-gradient(to bottom right, #F9E4F8, #F6F9CB);
+}

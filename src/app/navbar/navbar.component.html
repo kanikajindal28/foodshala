@@ -1,0 +1,82 @@
+
+<!--Upper Navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand text-success active font1" href="index"><i class="fa p-1">&#xf0f5;</i>FoodShala</a>
+
+  <ul class="nav navbar-nav float-sm-right">
+
+    <li class="nav-item">
+      <a class="nav-link" href="index"><i class="fa p-1">&#xf015;</i>&nbsp;Home</a>
+    </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn() && role=='restaurant'">
+      <a class="nav-link" href="restaurantMenu"><i class="fa p-1">&#xf118;&nbsp;</i>Restaurant Menu</a>
+    </li>
+
+  </ul>
+
+<!--  <ul class="nav navbar-nav float-sm-right m-auto ml-4">-->
+<!--    <form class="form-inline">-->
+<!--      <input class="form-control mr-sm-2" size="50" type="text" placeholder="Search for your favourite food">-->
+<!--      <button class="btn btn-success" type="submit" ><i class="fa">&#xf002;</i>&nbsp;Search</button>-->
+<!--    </form>-->
+<!--  </ul>-->
+
+  <ul class="nav navbar-nav float-sm-right ml-auto">
+
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn() && role=='restaurant'">
+      <a class="nav-link" href="addFoodItem"><i class="fa p-1">&#xf067;&nbsp;</i>Food Item</a>
+    </li>
+    <li class="nav-item" *ngIf="!loginService.isUserLoggedIn()" >
+      <a class="nav-link" href="authentication/login"><i class="fa p-1">&#xf118;&nbsp;</i>Login</a>
+    </li>
+    <li class="nav-item" *ngIf="!loginService.isUserLoggedIn()"  >
+      <a class="nav-link" href="authentication/registerCustomer"><i class="fa p-1">&#xf2bb;&nbsp;</i>Register</a>
+    </li>
+    <li class="nav-item" *ngIf="!loginService.isUserLoggedIn()"  >
+      <a class="nav-link" href="authentication/registerRestaurant"><i class="fa p-1">&#xf0b1;&nbsp;</i>Business</a>
+    </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn() && role =='customer'"  >
+      <a class="nav-link" href="cart"><i class="fa p-1">&#xf290;&nbsp;</i>Bag</a>
+    </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn() && role !=='customer'"  >
+      <a class="nav-link" href="viewOrders"><i class="fa p-1">&#xf2b0;&nbsp;</i>View Orders</a>
+    </li>
+    <li class="nav-item" *ngIf="loginService.isUserLoggedIn()"  >
+      <a class="nav-link" href="logout"><i class="fa p-1">&#xf03b;&nbsp;</i>Logout</a>
+    </li>
+
+
+<!--    <li class="nav-item dropdown">-->
+<!--      <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa p-1">&#xf007;&nbsp;</i>Your Account</a>-->
+<!--      <div class="dropdown-menu">-->
+<!--        <a class="nav-link dropdown-item text-dark" href="myAccount"><i class="fa p-1">&#xf044;&nbsp;</i>Edit Profile</a>-->
+<!--        <a class="nav-link dropdown-item text-dark" href="logout"><i class="fa p-1">&#xf03b;&nbsp;</i>Logout</a>-->
+<!--      </div>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="cart"><i class="fa p-1">&#xf290;&nbsp;</i>Bag</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--      <a class="nav-link" href="orderHistory"><i class="fa p-1">&#xf1da;&nbsp;</i>Order History</a>-->
+<!--    </li>-->
+  </ul>
+</nav>
+
+<!--&lt;!&ndash;Lower navbar&ndash;&gt;-->
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-white font1 sticky-top" style="box-shadow: 10px 2px 5px lightslategrey; padding-top: 65px;">-->
+<!--  <ul class="nav navbar-nav float-sm-left mr-auto ml-auto">-->
+
+<!--    <li class="nav-item pr-5 mr-5" [style.color]="'orange'">-->
+<!--      <a class="nav-link" href="items/veg" [style.color]="'green'"><i class="fa p-1" >&#xf111;</i>&nbsp;Veg</a>-->
+<!--    </li>-->
+<!--    <li class="nav-item pl-5 ml-5">-->
+<!--      <a class="nav-link" href="items/nonveg" [style.color]="'red'"><i class="fa p-1">&#xf111;</i>&nbsp;Non Veg</a>-->
+<!--    </li>-->
+
+<!--  </ul>-->
+<!--  -->
+<!--  -->
+<!--</nav>-->
+

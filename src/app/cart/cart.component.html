@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div class="container bg-light mt-5">
+  <div class="container-fluid pb-5">
+
+
+    <h1 class="font1 text-center pt-5 text-black-50 mt-5">My Shopping Bag</h1>
+    <hr class="mb-4">
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="font1 text-black-50">Your Bag's Total:- <i class="fa p-1">&#xf156;</i><span class="font-weight-bold">{{this.total}}</span></h3>
+        </div>
+        <div class="col-sm-6">
+          <h3 class="font1 text-black-50 text-right">Your Bag's Total Unique Items:- <span class="font-weight-bold">{{this.length}}</span></h3>
+        </div>
+      </div>
+
+      <hr>
+
+
+      <div *ngFor="let product of myProducts" class="row border-bottom" style="padding-bottom: 40px; padding-top: 20px;">
+        <div class="col-sm-6 m-2">
+          <h2 class="font1">{{product.menuItem.foodItem}}</h2><br>
+          <div><b>Quantity :-</b>&nbsp;
+            <button class="btn btn-success"(click)="removeOneQuantity(product.menuItem.foodId)">-&nbsp;</button>
+            &nbsp;<span class="badge badge-light">{{product.quantity}}</span>&nbsp;
+            <button class="btn btn-success" (click)="addOneQuantity(product.menuItem.foodId)">+&nbsp;</button></div><br>
+          <div><b>Price per Quantity&nbsp;<i class="fa p-1">&#xf02b;</i>:-</b>&nbsp;<i class="fa p-1">&#xf156;</i><span class="font-weight-">{{product.menuItem.price}}</span></div><br><hr>
+          <button class="btn btn-danger" (click)="removeProduct(product.menuItem.foodId)"><i class="fa p-1">&#xf1f8;&nbsp;</i>Remove</button>
+          <a class="btn btn-success ml-5" href="index"><i class="fa p-1">&#xf07a;&nbsp;</i>Continue Shopping</a>
+        </div>
+        <div class="col-sm-5 m-2">
+          <b>You are ordering from :-</b><br>
+          <h1 class="font1">{{product.menuItem.restaurant.restaurantName}}</h1><br>
+          <a class="btn btn-info w-100" href="visitRestaurant/{{product.menuItem.restaurant.restaurantId}}"><i class="fa p-1">&#xf07a;&nbsp;</i>Menu</a><br><br>
+
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success mt-5 mb-5 w-100" (click)="checkOut()">PLACE ORDER</button>
+</div>
+
+<app-footer></app-footer>

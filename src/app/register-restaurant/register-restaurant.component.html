@@ -1,0 +1,43 @@
+<form action="login" class="was-validated mt-4">
+
+  <div class="form-group">
+    <input type="text" class="form-control" id="name" placeholder="Restaurant's Name" name="name" [(ngModel)]="restaurant.restaurantName" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div>
+    <input type="email" [formControl]="emailref"   class="form-control" id="uname"  placeholder="Restaurant's Email Address"  name="username" [(ngModel)]="restaurant.email" required>
+    <div *ngIf="emailref.invalid && (emailref.dirty || emailref.touched)"
+         class="alert alert-danger">
+      <div *ngIf="emailref.errors.required">
+        Email is required.
+      </div>
+      <div *ngIf="emailref.errors.email">
+        Please enter a valid email.
+      </div>
+    </div>
+    <div *ngIf="emailref.errors.validateEmail">
+      Please enter valid email
+    </div >
+    <div class="valid-feedback">Valid.</div>
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control mt-4" id="pwd" placeholder="Choose Password" name="pswd" [(ngModel)]="restaurant.password" required>
+    <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" [pattern]="mobPattern" #mobNo="ngModel" id="number" placeholder="Mobile Number" name="mob" [(ngModel)]="restaurant.mobileNo" required>
+    <div *ngIf="mobNo.errors.pattern"  class="alert alert-danger p-2">Mobile Number Not Valid
+    </div>
+    <div class="valid-feedback">Valid.</div>
+
+  </div>
+
+
+  <button type="submit" class="btn btn-info mt-3 mb-3 w-100" (click)="addRestaurant()">REGISTER</button>
+</form>
+
+<small>Already using foodshala?<a href="authentication/login"> Log In here</a></small><br>
+<small>Want to register yourself?<a href="authentication/registerRestaurant">Register Here</a></small>
+

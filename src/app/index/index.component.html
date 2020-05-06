@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<div class="mt-5 grid">
+  <h1 class="p-5  text-center text-capitalize font1 text-info">Welcome to FoodShala</h1>
+</div>
+<div class="container-fluid">
+
+<div class="container">
+
+<div *ngFor="let food of allFood">
+
+<div *ngIf="food.type == 'Vegeterian'">
+  <div class="row p-2 m-4 gridGreen">
+    <div class="col-sm-4">
+      <h3 class="font1">{{food.foodItem}}</h3><br>
+    </div>
+    <div class="col-sm-1">
+      <b><i class="fa my-3">&#xf156;</i>{{food.price}}</b>
+    </div>
+    <div class="col-sm-3 ">
+      <h3>{{food.restaurant.restaurantName}}</h3>
+    </div>
+    <div class="col-sm-2 ">
+      <button class="ml-2 btn btn-sm btn-success" (click)="addToCart(food.foodId)" *ngIf="!loginService.isUserLoggedIn() || role != 'restaurant' ">Order</button>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-sm btn-success mr-2" (click)="seeMenu(food.restaurant.restaurantId)">Menu</button>
+    </div>
+
+  </div>
+</div>
+
+  <div *ngIf="food.type != 'Vegeterian'">
+    <div class="row p-2 m-4 gridRed">
+      <div class="col-sm-4">
+        <h3 class="font1">{{food.foodItem}}</h3><br>
+      </div>
+      <div class="col-sm-1">
+        <b><i class="fa my-3">&#xf156;</i>{{food.price}}</b>
+      </div>
+      <div class="col-sm-3 ">
+        <h3>{{food.restaurant.restaurantName}}</h3>
+      </div>
+      <div class="col-sm-2 ">
+        <button class="ml-2 btn btn-sm btn-danger" (click)="addToCart(food.foodId)" *ngIf="!loginService.isUserLoggedIn() || role != 'restaurant' ">Order</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-sm btn-danger mr-2" (click)="seeMenu(food.restaurant.restaurantId)">Menu</button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+
+</div>
+</div>
+<app-footer></app-footer>
+
+
+
+
+
+

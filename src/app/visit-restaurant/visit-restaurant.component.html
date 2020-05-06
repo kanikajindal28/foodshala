@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row pt-5 mt-3">
+
+    <div class="col-sm-6 mt-1">
+
+      <div class="mb-3"><h1 class="text-success font1 text-center">Vegeterian Food</h1></div>
+
+
+      <div class="container" >
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>FoodItem</th>
+            <th>Price</th>
+            <th>Restaurant Name</th>
+            <th *ngIf="role != 'restaurant'">Order</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let food of allFoodOfRestaurant">
+          <tr *ngIf="food.type == 'Vegeterian'">
+            <td class="pt-3">{{food.foodItem}}</td>
+            <td><i class="fa my-3">&#xf156;</i>{{food.price}}</td>
+            <td>{{food.restaurant.restaurantName}}</td>
+            <td  *ngIf="role != 'restaurant'"><button class="ml-2 btn btn-sm btn-info" (click)="orderFood(food.foodId)">Order</button><td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="col-sm-6 mt-1">
+
+      <div class="mb-3"><h1 class="text-danger font1 text-center">Non Vegeterian Food</h1></div>
+      <div class="container" >
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>FoodItem</th>
+            <th>Price</th>
+            <th>Restaurant Name</th>
+            <th *ngIf="role != 'restaurant'">Order</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let food of allFoodOfRestaurant">
+          <tr *ngIf="food.type!='Vegeterian'">
+            <td class="pt-3">{{food.foodItem}}</td>
+            <td><i class="fa my-3">&#xf156;</i>{{food.price}}</td>
+            <td>{{food.restaurant.restaurantName}}</td>
+            <td *ngIf="role != 'restaurant'"><button class="ml-2 btn btn-sm btn-info" (click)="orderFood(food.foodId)">Order</button><td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+  </div>
+</div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,63 @@
+.font1 {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil&display=swap');
+
+
+.grid {
+  background-color: lavenderblush;
+}
+
+.gridGreen {
+  background-color: #D3FCC2;
+}
+.gridRed {
+  background-color: #FCC2CC;
+}
+
+
+.customerClass {
+  width: 40%;
+  height: 300px;
+  border: 5px solid black;
+  padding: 50px;
+  margin: 10px;
+  background-color: #D3F790;
+  margin-left: 100px;
+
+}
+
+.customerClass:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+.restaurantClass {
+  background-color: beige;
+  width: 40%;
+  height: 300px;
+  padding: 50px;
+  border: 5px solid black;
+  margin: 10px;
+}
+
+.restaurantClass:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+a:link {
+  color: #60605F;
+}
+
+a:visited {
+  color: #60605F;
+  text-underline: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+}
